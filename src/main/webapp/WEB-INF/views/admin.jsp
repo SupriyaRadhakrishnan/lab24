@@ -32,5 +32,12 @@
 </c:forEach>
 </tbody>
 </table>
+<h1>Add Party</h1>
+<form method ="post" action="/add">
+<label for="name">Name</label>
+<input type = "text" name ="name" id="name" required/><br /><br />
+<input type = "datetime-local" name ="newdate" id="newdate" required/><br /><br />
+<input type="submit" value="Add a Party"/>
+</form>
 </body>
 </html>

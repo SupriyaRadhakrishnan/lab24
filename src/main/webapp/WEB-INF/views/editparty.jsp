@@ -13,6 +13,7 @@
 <input type="hidden" name="pdate" value="${ party.getPdate()}"/>
 <label for="name">Name</label>
 <input type = "text" name ="name" id="name" value="${ party.getName() }"/><br /><br />
+<input type = "datetime-local" name ="newdate" id="newdate"/>
 <input type="submit"/>
 </body>
 </html>

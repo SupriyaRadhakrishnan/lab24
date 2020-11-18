@@ -1,5 +1,6 @@
 package co.grandcircus.PizzaPartyPlanner.Controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,8 +75,14 @@ public class PartyController {
 	}
 	
 	@PostMapping("/editparty")
-	public String editparty(Party party)
+	public String editparty(Party party,String newdate)
 	{
+		System.out.println("newdate:" + newdate.replace("T"," "));
+		if(!newdate.isEmpty())
+		{
+			newdate = newdate.concat(":00");
+		party.setPdate(Timestamp.valueOf(newdate.replace("T"," ")));
+		}
         rep.save(party);
 		return "redirect:/admin";
 	}
@@ -83,7 +90,7 @@ public class PartyController {
 	public String addrsvp(Rsvp rsvp)
 	{
         rrep.save(rsvp);
-		return "redirect:/admin";
+		return "redirect:/";
 	}
 	@GetMapping("/details")
 	public String details(long id,Model model)
@@ -94,6 +101,16 @@ public class PartyController {
 	    model.addAttribute("party",party);
 		return "details";
 	}
-
+	@PostMapping("/add")
+	public String add(Party party,String newdate)
+	{
+		if(!newdate.isEmpty())
+		{
+			newdate = newdate.concat(":00");
+		party.setPdate(Timestamp.valueOf(newdate.replace("T"," ")));
+		}
+        rep.save(party);
+		return "redirect:/admin";
+	}
 
 }
