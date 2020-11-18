@@ -35,7 +35,7 @@ public class PartyOptionController {
 		PartyOption partyoption = rep.findById(id).get();
 		partyoption.setVotes(partyoption.getVotes()+1);
 		rep.save(partyoption);
-		return "redirect:/";
+		return "redirect:/vote";
 	}
 	
 	@PostMapping("/vote")

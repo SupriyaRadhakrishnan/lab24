@@ -104,7 +104,7 @@
   <option value="Drinks">Drinks</option>
   <option value="Pizza">Pizza</option>
 </select>
-<input type="submit"/>
+<input type="submit" value="Add"/>
 </form>
 </body>
 </html>

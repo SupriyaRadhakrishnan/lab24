@@ -1,11 +1,13 @@
 package co.grandcircus.PizzaPartyPlanner.POJO;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,9 @@ public class Party {
 	private String name;
 	private Timestamp pdate;
 
+	@OneToMany(mappedBy ="party")
+	private List<Rsvp> rsvps;
+	
 	public Party() {
 
 	}
@@ -51,6 +56,14 @@ public class Party {
 
 	public void setPdate(Timestamp pdate) {
 		this.pdate = pdate;
+	}
+
+	public List<Rsvp> getRsvps() {
+		return rsvps;
+	}
+
+	public void setRsvps(List<Rsvp> rsvps) {
+		this.rsvps = rsvps;
 	}
 
 }
