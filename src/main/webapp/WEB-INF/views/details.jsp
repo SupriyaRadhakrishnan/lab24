@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="/">Return to HomePage</a>
 <h1>${party.getName()} Details</h1>
 <p><b>Event Date</b>: ${party.getPdate()}</p>
 <h1>RSVPS</h1>
